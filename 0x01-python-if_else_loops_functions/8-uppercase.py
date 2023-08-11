@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+# converts a string to uppercase
 def uppercase(name):
     i = 0
     while i < len(name):
