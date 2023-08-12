@@ -10,15 +10,15 @@ if __name__ == "__main__":
         if argv[2] in "+-*/":
             a = int(argv[1])
             b = int(argv[3])
-            match (argv[2]):
-                case '+':
-                    print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
-                case '-':
-                    print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
-                case '*':
-                    print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
-                case '/':
-                    print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))
+            operator = argv[2]
+            if operator == '+':
+                print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
+            elif operator == '-':
+                print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
+            elif operator == '*':
+                print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
+            elif operator == '/':
+                print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
