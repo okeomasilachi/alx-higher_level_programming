@@ -2,6 +2,8 @@
 
 # prints all integers of a list
 def print_list_integer(my_list=[]):
-    for val in my_list:
-        if isinstance(val, int):
-            print("{}".format(val))
+    i = 0
+    while i != (len(my_list) - 1):
+        if isinstance(my_list[i], int):
+            print("{}".format(my_list[i]))
+        i += 1
