@@ -12,7 +12,3 @@ def print_reversed_list_integer(my_list=[]):
             print(f"{message}")
             return
         i -= 1
-
-
-list = [1, 2, "H", 9]
-print_reversed_list_integer(list)
