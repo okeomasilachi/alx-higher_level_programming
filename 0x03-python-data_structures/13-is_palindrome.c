@@ -1,25 +1,6 @@
 #include "lists.h"
 
 /**
- * dup_list - Duplicates a linked list
- * @head: The head of the linked list to duplicate
- *
- * Return: A pointer to the duplicated linked list
- */
-listint_t *dup_list(listint_t *head)
-{
-	listint_t *new = NULL;
-
-	if (head == NULL)
-		return (new);
-	new = malloc(sizeof(listint_t));
-	new->n = head->n;
-	new->next = dup_list(head->next);
-
-	return (new);
-}
-
-/**
  * is_palindrome - checks if a Linked list is a palindrome
  * @head:
  *
@@ -27,27 +8,22 @@ listint_t *dup_list(listint_t *head)
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cur = *head, *_list, *_list_1, *next_1, *temp;
+	listint_t *cur = *head;
+	int arr_num[3000];
+	int i, j;
 
 	if (cur == NULL || cur->next == NULL)
 		return (1);
-	_list = dup_list(*head);
-	_list_1 = _list;
-	next_1 = _list->next;
-	_list->next = NULL;
-	while (next_1 != NULL)
+
+	for (i = 0; cur != NULL; i++)
 	{
-		temp = next_1->next;
-		next_1->next = _list_1;
-		_list_1 = next_1;
-		next_1 = temp;
-	}
-	while (cur != NULL)
-	{
-		if (cur->n != _list_1->n)
-			return (0);
+		arr_num[i] = cur->n;
 		cur = cur->next;
-		_list_1 = _list_1->next;
 	}
+	i--;
+	for (j = 0; i > j; i--, j++)
+		if (arr_num[j] != arr_num[i])
+			return (0);
+
 	return (1);
 }
