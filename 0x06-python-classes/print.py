@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-my_module = "1-square"
+my_module = "2-square"
 my_function = "__init__"
 MyClass = "Square"
 
