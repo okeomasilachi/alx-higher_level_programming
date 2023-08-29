@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" defines a square by: (based on 3-square.py) """
+""" defines a square by: (based on 4-square.py) """
 
 
 class Square:
@@ -62,3 +62,15 @@ class Square:
             int: The area of the square.
         """
         return self.__size * self.__size
+
+    def my_print(self):
+        """Print the square.
+
+        If the size is 0, print an empty line. Otherwise, print a line of #'s
+        for each side of the square.
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)
