@@ -6,7 +6,11 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             print("{:d}".format(my_list[i]), end="")
             ctn += 1
-        except IndexError:
-            print("Traceback (most recent call last):")
-            break
+        except IndexError as er:
+            print(er, end="")
+        else:
+            continue
+        finally:
+            continue
+    print()
     return ctn
