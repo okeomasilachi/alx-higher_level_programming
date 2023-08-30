@@ -134,7 +134,7 @@ class Square:
         else:
             for i in range(self.__size):
                 if self.__position[1] > 0:
+                    pass
+                else:
                     print("_" * self.__position[1], end="")
-                elif self.__position[0] > 1:
-                    print("_" * self.__position[0], end="")
                 print("#" * self.__size)
