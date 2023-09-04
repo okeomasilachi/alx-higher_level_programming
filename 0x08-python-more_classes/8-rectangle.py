@@ -139,12 +139,11 @@ class Rectangle:
             Non empty string if width or height is not 0
             empty string if width or height is 0
         """
-        self.__string = ""
+        self.__string = ''
         if self._height == 0 or self._width == 0:
             return self.__string
         for i in range(self._height):
-            for j in range(self._width):
-                self.__string += str(Rectangle.print_symbol)
+            self.__string += str(self.print_symbol) * self._width
             if i != self._height - 1:
                 self.__string += '\n'
         return self.__string
