@@ -10,9 +10,19 @@ class Rectangle:
     class Rectangle defines a rectangle class
     """
 
+    """
+    Public class attribute number_of_instances:
+    Initialized to 0
+
+    Incremented during each new instance instantiation
+    Decremented during each instance deletion
+    """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Constructs a new rectangle object with the specified width and height.
+        Increament the number_of_instances by 1
 
         Args:
             width: The width of the rectangle.
@@ -36,6 +46,7 @@ class Rectangle:
             # to `width` and `height` respectively.
             self._width = width
             self._height = height
+            Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -151,8 +162,10 @@ class Rectangle:
         """
         prints the message 'Bye rectangle...
         when a particular instance is being deleted'
+        and decreament the number_of_instances by 1
 
         Returns:
             None
         """
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
