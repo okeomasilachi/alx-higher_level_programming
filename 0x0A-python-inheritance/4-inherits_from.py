@@ -5,7 +5,7 @@
 
 def inherits_from(obj, a_class):
     """
-    Checks if an object inherits from a specific class.
+    Check if an object inherits from a specific class.
 
     Args:
       obj: Object that you want to check if it inherits from a specific
@@ -16,10 +16,5 @@ def inherits_from(obj, a_class):
       `True` if the object `obj` is an instance of a class that
     inherits from the class `a_class`, and `False` otherwise.
     """
-    if isinstance(obj, a_class):
-        return True
-    else:
-        if isinstance(obj, type):
-            return inherits_from(obj, a_class.__bases__)
-        else:
-            False
+    tp = type(obj)
+    return issubclass(tp, a_class)
