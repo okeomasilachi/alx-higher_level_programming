@@ -1,0 +1,33 @@
+# Test cases for the BaseGeometry class
+
+>>> class BaseGeometry:
+...    def area(self):
+...        raise Exception("area() is not implemented")
+...
+...    def integer_validator(self, name, value):
+...        if not isinstance(value, int):
+...            raise TypeError(f"{name} must be an integer")
+...        if value < 1:
+...            raise ValueError(f"{name} must be greater than 0")
+
+# Test the integer_validator method
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("test_int", 10)
+
+# Trying to pass a non-integer value should raise a TypeError
+>>> bg.integer_validator("test_non_int", "string")
+Traceback (most recent call last):
+    ...
+TypeError: test_non_int must be an integer
+
+# Trying to pass a non-positive integer should raise a ValueError
+>>> bg.integer_validator("test_negative", -5)
+Traceback (most recent call last):
+    ...
+ValueError: test_negative must be greater than 0
+
+# Testing the area method (raises a NotImplementedError)
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
