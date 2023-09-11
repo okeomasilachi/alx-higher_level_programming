@@ -15,5 +15,6 @@ class MyList(list):
         creates a copy of it, sorts the copy in ascending
         order, and then prints the sorted copy.
         """
-        self.sort()
-        print(self)
+        ok = self.copy()
+        ok.sort()
+        print(ok)
