@@ -19,5 +19,6 @@ def read_file(filename=""):
         return
     else:
         with open(filename, 'r', encoding="utf-8") as file:
-            print(file.read())
+            for line in file:
+                print(line, end='')
         file.close()
