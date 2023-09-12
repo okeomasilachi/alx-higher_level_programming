@@ -20,3 +20,4 @@ def read_file(filename=""):
     else:
         with open(filename, 'r', encoding='utf8') as file:
             print(file.read())
+        file.close()
