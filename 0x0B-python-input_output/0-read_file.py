@@ -18,6 +18,6 @@ def read_file(filename=""):
     if filename == "":
         return
     else:
-        with open(filename, 'r', encoding='utf-8') as file:
+        with open(filename, 'r', encoding="utf-8") as file:
             print(file.read())
         file.close()
