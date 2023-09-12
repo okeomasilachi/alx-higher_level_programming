@@ -15,5 +15,7 @@ def read_file(filename=""):
       empty string if no parameter, the function will return
     `None`. Otherwise, print the contents of the file and not return anything.
     """
+    if not filename:
+        return
     with open(filename, 'r', encoding='utf8') as file:
         print(file.read())
