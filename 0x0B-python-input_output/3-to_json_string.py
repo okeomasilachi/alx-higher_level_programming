@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import json
 
 """ holds the to_jason_string function """
 
 
+import json
 def to_json_string(my_obj):
     """
     converts a Python object into a JSON string.
