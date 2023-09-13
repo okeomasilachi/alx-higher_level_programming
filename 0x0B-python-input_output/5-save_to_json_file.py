@@ -24,7 +24,4 @@ def save_to_json_file(my_obj, filename):
         return
     else:
         with open(filename, 'w', encoding="utf-8") as file:
-            if not my_obj:
-                return
-            else:
-                file.write(json.dumps(my_obj))
+            file.write(json.dumps(my_obj))
