@@ -38,3 +38,71 @@
 [0, 1, 3, 4, 5]
 >>> print(my_list)
 [1, 4, 0, 3, 5]
+
+# Check instantiation
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> isinstance(my_list, list)
+True
+"""
+
+# Check inheritance from list
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> isinstance(my_list, MyList)
+True
+"""
+
+# Check __str__
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> str(my_list)
+'[1, 3, 2]'
+"""
+
+# Check append()
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> my_list.append(4)
+>>> str(my_list)
+'[1, 3, 2, 4]'
+"""
+
+# Check print_sorted() with sorted append
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+"""
+
+# Check print_sorted() with not sorted append
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 1, 2, 3]
+"""
+
+# Check print_sorted() with no sorted append with negative number
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-1, 1, 2, 3]
+"""
+
+# Check print_sorted() with empty list
+"""
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+"""
+
+# Check print_sorted() returns a new list
+"""
+>>> my_list = MyList([1, 3, 2])
+>>> sorted_list = my_list.print_sorted()
+>>> isinstance(sorted_list, list)
+True
+"""
