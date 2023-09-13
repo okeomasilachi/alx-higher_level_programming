@@ -69,4 +69,9 @@ class Student:
           json: dictionary containing key-value pairs.
         """
         for i, v in json.items():
-            self.i = v
+            if i == "first_name":
+                self.first_name = v
+            elif i == "last_name":
+                self.last_name = v
+            elif i == "age":
+                self.age = v
