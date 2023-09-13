@@ -1,17 +1,5 @@
 #!/usr/bin/python3
-Rectangle = __import__('8-rectangle').Rectangle
+inherits_from = __import__('4-inherits_from').inherits_from
 
-r = Rectangle(3, 'u')
-
-print(r)
-print(dir(r))
-
-try:
-    print("Rectangle: {} - {}".format(r.width, r.height))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    r2 = Rectangle(4, True)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+a = 1
+print(inherits_from(a, int))
