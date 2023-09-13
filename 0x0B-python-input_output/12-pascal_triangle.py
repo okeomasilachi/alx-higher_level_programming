@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+"""
+This model holds the funtion that
+return a list of lists that represents
+the pascal triangle
+"""
+
+
 def pascal_triangle(n):
     """
     Generate the first n rows of Pascal's triangle.
