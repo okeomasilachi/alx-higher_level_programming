@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-inherits_from = __import__('4-inherits_from').inherits_from
+Rectangle = __import__('8-rectangle').Rectangle
 
-a = 1
-print(inherits_from(a, int))
+r = Rectangle(3, True)
