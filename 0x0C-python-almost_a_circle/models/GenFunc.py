@@ -43,3 +43,10 @@ def myvars(obj, value=[]):
                     att[key] = getattr(obj, key)
 
     return att
+
+
+def create_dictionary(keys, values):
+    d = {}
+    for i in range(min(len(keys), len(values))):
+        d[keys[i]] = int(values[i])
+    return d

@@ -2,6 +2,32 @@
 
 """
 """
+def myvars(obj, value=[]):
+    """
+    Takes an object as input and returns a dictionary containing the object's
+    attributes and their corresponding values.
+
+    Args:
+      obj: An object or instance of a class.
+
+    Returns:
+      Dictionary containing the attributes and their values of the
+      input object `obj`. If the input object is empty or `None`,
+      an empty dictionary is returned.
+    """
+    if not obj:
+        return {}
+    else:
+        att = {}
+        if value is not None:
+            for name in value:
+                att[name] = getattr(obj, name)
+        else:
+            for key in dir(obj):
+                if not key.startswith("_"):
+                    att[key] = getattr(obj, key)
+
+    return att
 
 
 
@@ -16,5 +42,5 @@ class person:
 
 
 p1 = person("Okeomasilachi", "Onyedibia", 67)
-print(p1)
-print(myvars(p1, ["age", "first_name"]))
+
+print(myvars(p1))
