@@ -117,4 +117,4 @@ class Square(Rectangle):
           these keys are the corresponding values of the variables "id",
           "size", "x", and "y" in the object.
         """
-        return myvars(self, ["id", "size", "x", "y",])
+        return myvars(self, ["id", "size", "x", "y"])
