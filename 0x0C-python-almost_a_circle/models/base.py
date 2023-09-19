@@ -164,10 +164,10 @@ class Base:
         """
         file_name = f"{cls.__name__}.json"
         if os.path.exists(file_name):
-          with open(file_name, "r", encoding="utf-8") as file:
-              data = file.read()
-              ret = [cls.create(**item) for item in cls.from_json_string(data)]
-              return ret
+            with open(file_name, "r", encoding="utf-8") as file:
+                data = file.read()
+                r = [cls.create(**item) for item in cls.from_json_string(data)]
+                return r
         else:
             return []
 
