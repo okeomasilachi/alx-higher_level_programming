@@ -213,4 +213,4 @@ class Rectangle(Base):
           The values of these keys are the corresponding values of the
           variables "id", "width", "height", "x", and "y" in the object.
         """
-        return myvars(self, ["id", "width", "height", "x", "y",])
+        return myvars(self, ["id", "width", "height", "x", "y"])
