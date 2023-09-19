@@ -2,5 +2,5 @@
 """ Check """
 from models.rectangle import Rectangle
 
-r = Rectangle(10, 12, 0, 1)
+r = Rectangle(5, 4, 4, 3)
 r.display()

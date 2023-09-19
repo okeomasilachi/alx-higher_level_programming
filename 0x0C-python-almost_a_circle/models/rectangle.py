@@ -162,9 +162,6 @@ class Rectangle(Base):
         with the option to specify the position and size of the
         rectangle.
         """
-        if self.__y > 0 and self.__x > 0:
-            for i in range(self.__y):
-                print(" ")
         for i in range(self.__height):
             if self.__x > 0:
                 print(" " * self.__x, end="")
