@@ -163,12 +163,13 @@ class Base:
           data read from the file.
         """
         file_name = f"{cls.__name__}.json"
-        if not os.path.exists(file_name):
-            ret = []
-        with open(file_name, "r", encoding="utf-8") as file:
-            data = file.read()
-            ret = [cls.create(**item) for item in cls.from_json_string(data)]
-            return ret
+        if os.path.exists(file_name):
+          with open(file_name, "r", encoding="utf-8") as file:
+              data = file.read()
+              ret = [cls.create(**item) for item in cls.from_json_string(data)]
+              return ret
+        else:
+            return []
 
     @classmethod
     def load_from_file_csv(cls):
