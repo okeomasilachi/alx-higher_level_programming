@@ -92,9 +92,12 @@ class Base:
         class_name = cls.__name__
         with open(f"{class_name}.json", "w", encoding="utf-8") as file:
             ret = []
-            for i in list_objs:
-                ret.append(i.to_dictionary())
-            file.write(cls.to_json_string(ret))
+            if list_objs is None:
+                file.write(cls.to_json_string([]))
+            else:
+                for i in list_objs:
+                    ret.append(i.to_dictionary())
+                file.write(cls.to_json_string(ret))
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
