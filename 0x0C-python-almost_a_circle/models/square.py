@@ -80,7 +80,7 @@ class Square(Rectangle):
           be used to update the width and height attributes of the object.
         """
         if validate(value, "width"):
-            self.update(width=value, height=value)
+            super().update(width=value, height=value)
 
     def update(self, *args, **kwargs):
         """

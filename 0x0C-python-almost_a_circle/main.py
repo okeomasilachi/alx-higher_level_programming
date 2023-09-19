@@ -1,31 +1,25 @@
 #!/usr/bin/python3
 """ Check """
-from models.rectangle import Rectangle
-import os
-import json
+from models.square import Square
 
-
-file_path = "Rectangle.json"
-if os.path.exists(file_path):
-    os.remove(file_path)
-
-list_objs = None
-expected_list = []
-Rectangle.save_to_file(list_objs)
-
-if not os.path.exists(file_path):
-    print("save_to_file doesn't create a file {}".format(file_path))
+s = Square(12)
+if s is None:
+    print("Can't create Square")
     exit(1)
 
-with open(file_path, "r") as file:
-    list_json = json.load(file)
+for attribute in list(s.__dict__.keys()):
+    if "size" in attribute:
+        print("You are not allowed to add any new attribute for size: {}".format(attribute))
+        exit(1)
 
-    if list_json is None:
-        print("Can't parse {} file".format(file_path))
-        exit(1)
-    
-    if expected_list != list_json:
-        print("Wrong serialization: {} instead of {}".format(list_json, expected_list))
-        exit(1)
+if s.size != 12:
+    print("Wrong size getter1: {}".format(s.size))
+    exit(1)
+
+s.size = 5
+print(s.size)
+if s.size != 5:
+    print("Wrong size getter2: {}".format(s.size))
+    exit(1)
 
 print("OK", end="")
