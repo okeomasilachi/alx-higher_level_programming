@@ -1,25 +1,13 @@
 #!/usr/bin/python3
-""" Check """
-from models.square import Square
+""" 6-main """
+from models.rectangle import Rectangle
 
-s = Square(12)
-if s is None:
-    print("Can't create Square")
-    exit(1)
+if __name__ == "__main__":
 
-for attribute in list(s.__dict__.keys()):
-    if "size" in attribute:
-        print("You are not allowed to add any new attribute for size: {}".format(attribute))
-        exit(1)
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
 
-if s.size != 12:
-    print("Wrong size getter1: {}".format(s.size))
-    exit(1)
+    print("---")
 
-s.size = 5
-print(s.size)
-if s.size != 5:
-    print("Wrong size getter2: {}".format(s.size))
-    exit(1)
-
-print("OK", end="")
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()
