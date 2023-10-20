@@ -1,0 +1,2 @@
+-- Create user user_0d_1 if it doesn't exist
+-- Grant all privileges to user_0d_1
