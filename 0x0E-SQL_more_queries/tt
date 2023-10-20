@@ -1,0 +1,48 @@
+CREATE TABLE student (
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  email VARCHAR(60) NULL,
+  street VARCHAR(50) NOT NULL,
+  city VARCHAR(40) NOT NULL,
+  state CHAR(2) NOT NULL DEFAULT 'PA',
+  zip VARCHAR(10) NOT NULL,  -- Changed data type to VARCHAR(10)
+  phone VARCHAR(15) NOT NULL, -- Changed data type to VARCHAR(15)
+  bday DATE NOT NULL,
+  sex ENUM('M', 'F') NOT NULL,
+  date_entered TIMESTAMP,
+  lunch_cost FLOAT NULL,
+  student_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+INSERT INTO student (fname, lname, email, street, city, state, zip, phone, bday, sex, date_entered, lunch_cost)
+VALUES 
+  ('John', 'Doe', 'john.doe@example.com', '123 Main St', 'Anytown', 'PA', 12345, 5555555555, '1995-05-15', 'M', '2023-10-20 12:00:00', 10.50),
+  ('Jane', 'Doe', 'jane.doe@example.com', '456 Oak Dr', 'Sometown', 'NY', 54321, 5555555556, '1998-08-25', 'F', '2023-10-20 12:15:00', 9.75),
+  ('Bob', 'Smith', 'bob.smith@example.com', '789 Elm Ave', 'Othertown', 'CA', 98765, 5555555557, '1997-03-10', 'M', '2023-10-20 12:30:00', 12.00),
+  ('Alice', 'Johnson', 'alice.johnson@example.com', '321 Pine Rd', 'Somewhere', 'TX', 13579, 5555555558, '1999-11-05', 'F', '2023-10-20 12:45:00', 8.50),
+  ('Mike', 'Brown', 'mike.brown@example.com', '654 Cedar Ln', 'Anytown', 'PA', 24680, 5555555559, '1996-07-20', 'M', '2023-10-20 13:00:00', 11.25),
+  ('Sara', 'Davis', 'sara.davis@example.com', '987 Maple Blvd', 'Sometown', 'NY', 56473, 5555555560, '1998-04-30', 'F', '2023-10-20 13:15:00', 9.00),
+  ('Tom', 'Wilson', 'tom.wilson@example.com', '159 Birch Ct', 'Othertown', 'CA', 75391, 5555555561, '1997-09-12', 'M', '2023-10-20 13:30:00', 10.75),
+  ('Emily', 'Lee', 'emily.lee@example.com', '753 Spruce Dr', 'Somewhere', 'TX', 95147, 5555555562, '1999-02-18', 'F', '2023-10-20 13:45:00', 7.25),
+  ('Alex', 'Jones', 'alex.jones@example.com', '357 Oak Ln', 'Anytown', 'PA', 15937, 5555555563, '1995-12-22', 'M', '2023-10-20 14:00:00', 12.50),
+  ('Jessica', 'Kim', 'jessica.kim@example.com', '951 Pine Rd', 'Sometown', 'NY', 75319, 5555555564, '1998-06-08', 'F', '2023-10-20 14:15:00', 8.75);
+
+CREATE TABLE class (
+  name varchar(30) NOT NULL,
+  class_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+ 
+ INSERT INTO class (name) VALUES 
+  ('Mathematics'),
+  ('English'),
+  ('Science'),
+  ('History'),
+  ('Art'),
+  ('Physical Education'),
+  ('Music'),
+  ('Computer Science'),
+  ('Geography'),
+  ('Spanish'),
+  ('French'),
+  ('Biology'),
+  ('Chemistry'),
+  ('Physics');
+
