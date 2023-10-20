@@ -3,3 +3,4 @@ my_env
 .gitignore
 test
 .idea
+.vscode
