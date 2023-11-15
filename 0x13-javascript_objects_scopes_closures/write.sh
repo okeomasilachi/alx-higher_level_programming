@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-text="#!/usr/bin/node"
+text="#!/usr/bin/node\n"
 
 for file in *; do
     if [[ -f $file && $(head -n 1 "$file") != "$text" && $file != "README.md" ]]; then
