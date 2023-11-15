@@ -2,7 +2,7 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (w > 0 && h > 0) {
+    if (w > 0 && Number.isInteger(w) && h > 0 && Number.isInteger(w)) {
       this.height = h;
       this.width = w;
     }
