@@ -1,6 +1,6 @@
 __pycache__
-my_env
 .gitignore
+venv
 test
 .idea
 .vscode
