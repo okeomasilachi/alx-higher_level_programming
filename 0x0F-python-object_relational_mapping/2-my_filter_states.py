@@ -18,12 +18,13 @@ if __name__ == "__main__":
         db=args[2]
     )
     cur = db.cursor()
-    qua = "SELECT * FROM states \
-        WHERE name = '{}' ORDER BY \
-            id ASC".format(args[3])
-    cur.execute(qua)
-    states = cur.fetchall()
-    for state in states:
-        print(state)
+    if len(args) >= 4:
+        qua = "SELECT * FROM states \
+            WHERE name = '{}' ORDER BY \
+                id ASC".format(args[3])
+        cur.execute(qua)
+        states = cur.fetchall()
+        for state in states:
+            print(state)
     cur.close()
     db.close()
