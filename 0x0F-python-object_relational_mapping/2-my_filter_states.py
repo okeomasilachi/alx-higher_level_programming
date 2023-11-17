@@ -17,12 +17,13 @@ if __name__ == "__main__":
         passwd=args[1],
         db=args[2]
     )
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states \
-                   WHERE name = %s ORDER BY \
-                   id ASC", (args[3],))
-    states = cursor.fetchall()
+    cur = db.cursor()
+    qua = "SELECT * FROM states \
+        WHERE name = '{}' ORDER BY \
+            id ASC".format(args[3])
+    cur.execute(qua)
+    states = cur.fetchall()
     for state in states:
         print(state)
-    cursor.close()
+    cur.close()
     db.close()
