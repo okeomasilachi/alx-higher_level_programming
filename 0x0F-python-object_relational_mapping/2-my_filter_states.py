@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-""" The module lists all states from the database hbtn_0e_0_usa """
+""" The module lists all states from the
+database hbtn_0e_0_usa """
 
 
 import MySQLdb

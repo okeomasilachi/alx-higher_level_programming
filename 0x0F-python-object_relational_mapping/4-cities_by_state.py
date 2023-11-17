@@ -20,7 +20,7 @@ if __name__ == "__main__":
     quary = "SELECT GROUP_CONCAT(name ORDER BY id ASC SEPARATOR ', ') \
         FROM cities WHERE state_id = \
         (SELECT id FROM states WHERE name = %s)"
-    cursor.execute(quary, (args[3],))
+    cursor.execute(quary)
     states = cursor.fetchall()
     for state in states:
         for i in state:
