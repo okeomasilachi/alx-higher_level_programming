@@ -17,8 +17,8 @@ if __name__ == "__main__":
         db=args[2]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name \
-                   = %s ORDER BY id ASC", (args[3],))
+    cursor.execute("SELECT * FROM states \
+                   WHERE name = %s ORDER BY id ASC", (args[3],))
     states = cursor.fetchall()
     for state in states:
         print(state)

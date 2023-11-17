@@ -17,11 +17,9 @@ if __name__ == "__main__":
         db=args[2]
     )
     cursor = db.cursor()
-    quary = """
-    SELECT GROUP_CONCAT(name ORDER BY id ASC SEPARATOR ', ') 
-    FROM cities 
-    WHERE state_id = (SELECT id FROM states WHERE name = %s)
-    """
+    quary = "SELECT GROUP_CONCAT(name ORDER BY id ASC SEPARATOR ', ') \
+        FROM cities WHERE state_id = \
+        (SELECT id FROM states WHERE name = %s)"
     cursor.execute(quary, (args[3],))
     states = cursor.fetchall()
     for state in states:
