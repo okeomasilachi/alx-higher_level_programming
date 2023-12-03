@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-
 """ sends a request to the URL and displays
 the body of the response."""
+
 
 import requests
 from sys import argv
@@ -14,4 +14,4 @@ if __name__ == "__main__":
         print(f"Error code: {r.status_code}")
     else:
         value = r.content.decode("UTF-8")
-    print(value)
+        print(value)
