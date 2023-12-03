@@ -12,7 +12,7 @@ if __name__ == "__main__":
     owner = sys.argv[1]
     repo = sys.argv[2]
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
-    arg = {'per_page': 10}
+    arg = {'author': owner, 'per_page': 10}
 
     res = requests.get(url, params=arg)
 
