@@ -17,7 +17,7 @@ rq(url, (error, response) => {
   if (error) {
     console.error(error);
   }
-  // Printing status code
+
   let value = response.toJSON();
   value = JSON.parse(value.body);
   console.log(value.title);
