@@ -16,40 +16,39 @@ request(apiUrl, (error, response, body) => {
     process.exit(1);
   }
 
-  if (response.statusCode !== 200) {
-    console.error(`Unexpected response: ${response.statusCode}`);
+  if (response.sC !== 200) {
+    console.error(`Unexpected response: ${response.sC}`);
     process.exit(1);
   }
 
   const movieData = JSON.parse(body);
-  const characterUrls = movieData.characters;
+  const cUrls = movieData.characters;
 
-  if (characterUrls.length === 0) {
+  if (cUrls.length === 0) {
     console.log(`No characters found for Movie ID ${movieId}`);
     process.exit(0);
   }
 
-  // Use async/await to ensure characters are printed in order
   (async () => {
-    for (const characterUrl of characterUrls) {
-      const characterData = await fetchCharacterData(characterUrl);
-      console.log(characterData.name);
+    for (const cUrl of cUrls) {
+      const cI = await fCI(cUrl);
+      console.log(cI.name);
     }
   })();
 });
 
-function fetchCharacterData (characterUrl) {
+function fCI (cUrl) {
   return new Promise((resolve, reject) => {
-    request(characterUrl, (charError, charResponse, charBody) => {
+    request(cUrl, (charError, cR, charBody) => {
       if (charError) {
-        // Use an Error object for better error handling
+
         reject(new Error(charError));
-      } else if (charResponse.statusCode !== 200) {
-        // Use an Error object for better error handling
-        reject(new Error(`Unexpected response for character: ${charResponse.statusCode}`));
+      } else if (cR.sC !== 200) {
+
+        reject(new Error(`Unexpected response: ${cR.sC}`));
       } else {
-        const characterData = JSON.parse(charBody);
-        resolve(characterData);
+        const cI = JSON.parse(charBody);
+        resolve(cI);
       }
     });
   });
