@@ -17,12 +17,13 @@ rq(url, (error, response) => {
   let value = response.toJSON();
   value = JSON.parse(value.body);
   value.forEach(element => {
-    if (Object.hasOwnProperty.call(dict, element.userId)) {
-      if (element.completed === true) {
-        dict[element.userId] = dict[element.userId] + 1;
+    const { userId, completed } = element;
+    if (Object.hasOwnProperty.call(dict, userId)) {
+      if (completed === true) {
+        dict[userId]++;
       }
-    } else {
-      dict[element.userId] = 0;
+    } else if (!Object.hasOwnProperty.call(dict, userId) && completed) {
+      dict[userId] = 1;
     }
   });
   console.log(dict);
