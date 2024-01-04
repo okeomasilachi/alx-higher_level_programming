@@ -6,7 +6,7 @@ if (process.argv.length < 3) {
   process.exit();
 }
 
-const wedgeAntillesId = 18;
+const ID = 18;
 
 // Request URL
 const url = process.argv[2];
@@ -23,7 +23,7 @@ rq(url, (error, response) => {
   for (let i = 0; i < value.length; i++) {
     const char = value[i].characters;
     for (let j = 0; j < char.length; j++) {
-      if (char[j] === 'https://swapi-api.alx-tools.com/api/people/' + wedgeAntillesId + '/') {
+      if (char[j] === 'https://swapi-api.alx-tools.com/api/people/' + ID + '/') {
         num++;
       }
     }
