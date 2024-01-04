@@ -16,8 +16,8 @@ rq(url, (error, response) => {
 
   let value = response.toJSON();
   value = JSON.parse(value.body);
-  value.characters.forEach(element => {
-    rq(element, (error, res) => {
+  for (let i = 0; i < value.characters.length; i++) {
+    rq(value.characters[i], (error, res) => {
       if (error) {
         console.error(error);
       }
@@ -26,5 +26,5 @@ rq(url, (error, response) => {
       value = JSON.parse(value.body);
       console.log(value.name);
     });
-  });
+  }
 });
